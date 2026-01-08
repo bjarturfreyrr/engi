@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190.12 76.07">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: Inter-Medium, Inter;
+        font-size: 43.45px;
+        font-variation-settings: 'wght' 500, 'slnt' 0;
+        font-weight: 500;
+      }
+    </style>
+  </defs>
+  <rect width="190.12" height="76.07"/>
+  <g>
+    <path class="cls-1" d="M26.58,16.77h41.13v1.57c0,3.95-3.21,7.16-7.16,7.16H23.32v-5.46c0-1.8,1.46-3.27,3.27-3.27Z"/>
+    <path class="cls-1" d="M23.32,41.79h39.62v1.57c0,3.95-3.21,7.16-7.16,7.16h-29.8c-1.47,0-2.67-1.19-2.67-2.67v-6.06h0Z"/>
+    <path class="cls-1" d="M23.32,29.31h35.81v1.57c0,3.95-3.21,7.16-7.16,7.16h-28.65v-8.73h0Z"/>
+    <text class="cls-2" transform="translate(76.98 49.82)"><tspan x="0" y="0">Engi</tspan></text>
+  </g>
+</svg>
