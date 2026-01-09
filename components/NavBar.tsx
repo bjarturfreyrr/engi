@@ -27,18 +27,18 @@ const Items = [
 
 const NavBar = () => {
   return (
-    <div className='grid grid-cols-3 items-center border border-outline rounded-full m-10 bg-gradient-to-r from-engi-green-500 to-engi-blue-500 h-[70px] px-5'>
+    <div className='grid grid-cols-3 items-center rounded-full m-10 h-[70px] px-5'>
         <div className='justify-self-start items-center align-center ml-10 text-2xl text-white font-bold'>
             <Image
             src="/svg/multi-navy.svg"
-            width={120}
-            height={120}
+            width={160}
+            height={160}
             className=""
             alt="Logo"
             />
         </div>
 
-        <div className='justify-self-center flex flex-row gap-10 text-white'>
+        <div className='justify-self-center flex flex-row gap-10 text-engi-navy-100'>
             
                 {Items.slice(0, 3).map((item) => (
                     <Link 
@@ -58,9 +58,9 @@ const NavBar = () => {
             ))}
         </div>
         <div className='justify-self-end flex flex-row items-center gap-5'>
-            <LayoutDashboard className="w-[25px] h-[25px] text-white font-light cursor-pointer" />
-            <Search className="w-[25px] h-[25px] text-white font-light cursor-pointer" />
-            <Button className="w-[200px] h-[50px] rounded-full bg-blue-500 text-white hover:bg-blue-600" variant="default">Skoða meira</Button>
+            <LayoutDashboard className="w-[25px] h-[25px] font-light cursor-pointer text-engi-navy-100" />
+            <Search className="w-[25px] h-[25px] font-light cursor-pointer text-engi-navy-100" />
+            <Button className="w-[200px] h-[50px]" variant="glass">Skoða meira</Button>
         </div>
     </div>
   )
