@@ -1,13 +1,16 @@
 
 import React from 'react'
 import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
 import Image from 'next/image'
 import Link from 'next/link'
+import { MoveRight } from "lucide-react"
+
 
 const websites = [
   {
     title: "Chad Grooming",
-    desc: "Netverslun á karlmans rakstursvörum",
+    desc: "Netverslun fyrir karlmans rakstursvörum",
     page: "/",
     image: "/chadgrooming2.png",
   },
@@ -45,16 +48,21 @@ const page = () => {
 
 
       {/* PROJECTS */}
-      <section className='w-full flex flex-col items-center gap-15 py-20 px-30'>
+      <section className='w-full flex flex-col items-center gap-15'>
+          <div className='flex flex-col gap-5 items-center justify-center'>
+            <h1 className='text-6xl text-engi-navy-100'>Verkin okkar</h1>
+            <p className='text-neutral-600 mb-7'>Vefsíður unnar af okkar teymi</p>
+          </div>
+
             {websites.map((item, index) => (
-              <Link href={item.page} key={index} className='w-full max-w-6xl mx-auto'>
-                <div className='flex flex-row gap-15 justify-between px-10'>
+              <Link href={item.page} key={index} className='w-full max-w-6xl mx-auto rounded-lg relative group'>
+                <div className='absolute inset-0 bg-gradient-to-b from-engi-green-100 to-engi-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-400 rounded-lg pointer-events-none' />
+                <div className='flex flex-row gap-15 justify-between mx-10 relative'>
                   <Image 
                     src={item.image}
                     alt={item.title}
                     width={450}
-                    height={450}
-                    className='rounded-xl'
+                    height={450} className='rounded-xl'
                   />
 
                   <div className='flex-1'>
@@ -66,8 +74,27 @@ const page = () => {
                     <Button variant="glass" className='px-6 py-6'>Skoða Verkefni</Button>
                   </div>
                 </div>
+                <div className='px-10 mt-5 relative'>
+                  <Separator />
+                </div>
               </Link>
             ))}
+
+      </section>
+
+      <section className='grid grid-cols-2 items-center h-[600px] bg-gradient-to-b from-engi-blue-500 to-engi-green-500 mt-30'>
+            <div className='flex justify-end'>
+              <div className='flex flex-col gap-10 bg-neutral-100 px-10 py-20'>
+                <h1 className='text-engi-navy-100 text-4xl'>Ertu með verkefni í huga?</h1>
+                <p className='text-neutral-600'>Við viljum heyra frá þér!</p>
+
+                <Link href="/" className='flex flex-row gap-3 items-center cursor-pointer group'>
+                      <Button className='bg-transparent text-engi-blue-500 hover:bg-transparent cursor-pointer p-0'>Hafa samband</Button>
+                      <MoveRight size={15} className='transition-transform text-engi-blue-500 transition-all duration-300 group-hover:translate-x-2 group-hover:text-engi-blue-500'/>
+                  </Link>
+              </div>
+            </div>
+            <div></div>
       </section>
     </div>
   )
