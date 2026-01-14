@@ -66,6 +66,21 @@
   --color-engi-navy-300: var(--engi-navy-300);
   --color-engi-navy-400: var(--engi-navy-400);
   --color-engi-navy-500: var(--engi-navy-500);
+  
+  /* Extended spacing */
+  --spacing-28: 7rem;
+  --spacing-32: 8rem;
+  --spacing-36: 9rem;
+  --spacing-40: 10rem;
+  --spacing-44: 11rem;
+  --spacing-48: 12rem;
+  --spacing-52: 13rem;
+  --spacing-56: 14rem;
+  --spacing-60: 15rem;
+  --spacing-64: 16rem;
+  --spacing-72: 18rem;
+  --spacing-80: 20rem;
+  --spacing-96: 24rem;
 }
 
 :root {

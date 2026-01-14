@@ -1,10 +1,13 @@
+"use client"
 
-import React from 'react'
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import Image from 'next/image'
 import Link from 'next/link'
 import { MoveRight } from "lucide-react"
+import Services from "@/components/Services"
+import { motion } from "motion/react"
+
 
 
 const websites = [
@@ -40,7 +43,22 @@ const page = () => {
               <Button className='mt-4 w-[200px] h-[50px]' variant='glass'>Skoða meira</Button>
             </div>
             <div className='flex items-center justify-center'>
-              hi
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: [0, -10, 0] }}
+                transition={{ 
+                  opacity: { duration: 0.8 },
+                  y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.8 }
+                }}
+              >
+                <Link href="/">
+                  <Image src="/undraw_web-development_f0tp.svg"
+                  alt="Image"
+                  height={500}
+                  width={500}
+                  />
+                </Link>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -55,32 +73,37 @@ const page = () => {
           </div>
 
             {websites.map((item, index) => (
-              <Link href={item.page} key={index} className='w-full max-w-6xl mx-auto rounded-lg relative group'>
-                <div className='absolute inset-0 bg-gradient-to-b from-engi-green-100 to-engi-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-400 rounded-lg pointer-events-none' />
-                <div className='flex flex-row gap-15 justify-between mx-10 relative'>
-                  <Image 
-                    src={item.image}
-                    alt={item.title}
-                    width={450}
-                    height={450} className='rounded-xl'
-                  />
+              <Link href={item.page} key={index} className='w-full max-w-6xl mx-auto group'>
+                <div className='relative rounded-lg overflow-hidden mx-10'>
+                  <div className='absolute inset-0 bg-gradient-to-b from-engi-green-100 to-engi-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none' />
+                  <div className='flex flex-row gap-15 justify-between relative py-4'>
+                    <Image 
+                      src={item.image}
+                      alt={item.title}
+                      width={450}
+                      height={450} className='rounded-xl'
+                    />
 
-                  <div className='flex-1'>
-                    <h1 className='text-xl text-engi-navy-100'>{item.title}</h1>
-                    <p className='text-3xl text-engi-navy-100'>{item.desc}</p>
-                  </div>
+                    <div className='flex-1'>
+                      <h1 className='text-xl text-engi-navy-100'>{item.title}</h1>
+                      <p className='text-3xl text-engi-navy-100'>{item.desc}</p>
+                    </div>
 
-                  <div>
-                    <Button variant="glass" className='px-6 py-6'>Skoða Verkefni</Button>
+                    <div>
+                      <Button variant="default" className='px-6 py-6 bg-0 text-engi-navy-100 hover:text-engi-navy-100'>Skoða Verkefni</Button>
+                    </div>
                   </div>
                 </div>
-                <div className='px-10 mt-5 relative'>
+                <div className='px-10 mt-5'>
                   <Separator />
                 </div>
               </Link>
             ))}
-
       </section>
+
+      <Services />
+
+      
 
       <section className='grid grid-cols-2 items-center h-[600px] bg-gradient-to-b from-engi-blue-500 to-engi-green-500 mt-30'>
             <div className='flex justify-end'>
