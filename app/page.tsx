@@ -73,7 +73,7 @@ const page = () => {
           </div>
 
             {websites.map((item, index) => (
-              <Link href={item.page} key={index} className='w-full max-w-6xl mx-auto group'>
+              <Link href={item.page} key={index} className='w-full max-w-6xl mx-auto group px-5'>
                 <div className='relative rounded-lg overflow-hidden mx-10'>
                   <div className='absolute inset-0 bg-gradient-to-b from-engi-green-100 to-engi-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none' />
                   <div className='flex flex-row gap-15 justify-between relative py-4'>

@@ -9,7 +9,7 @@ import { ScrollProgress } from "@/components/ui/scroll-progress"
 const Items = [
     {
         name: "Stofan",
-        href: "/about"
+        href: "/about-us"
     },
     {
         name: "Þjónusta",
