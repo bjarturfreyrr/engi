@@ -4,6 +4,20 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 First, run the development server:
 
+
+Eingi
+Bergi
+Netra
+Brími
+Kjar
+ingið
+Egra
+Klett
+Brími
+Eyna
+Enga
+
+
 ```bash
 npm run dev
 # or
