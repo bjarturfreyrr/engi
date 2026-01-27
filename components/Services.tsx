@@ -32,19 +32,19 @@ const Services = () => {
 
 
   return (
-    <div className='my-60'>
+    <div className='my-20 lg:my-60 min-h-[400px] lg:h-[300px]'>
         {/* Þjonustur */}
 
-      <section className='w-full mt-44'>
-        <div className='flex flex-row gap-40 max-w-4xl mx-auto'>
+      <section className='w-full mt-10 lg:mt-44 px-5'>
+        <div className='flex flex-col lg:flex-row gap-10 lg:gap-40 max-w-4xl mx-auto'>
           <div className='flex-1 max-w-md'>
             <div className='flex flex-col gap-5'>
-                <div className='flex flex-row gap-10'>
+                <div className='flex flex-row gap-4 lg:gap-10 flex-wrap'>
                     {services.map((service, index) => (
                         <h1
                         key={index}
                         onClick={() => setActiveTab(index)}
-                        className={`cursor-pointer ${activeTab === index ? 'text-engi-blue-500 text-sm' : 'text-gray-500 text-sm'}`}
+                        className={`cursor-pointer text-xs lg:text-sm ${activeTab === index ? 'text-engi-blue-500' : 'text-gray-500'}`}
                         >
                             {service.title}
                         </h1>
@@ -53,20 +53,20 @@ const Services = () => {
 
                 <Separator />
 
-                <h1 className='text-engi-navy-100 text-4xl mt-10 font-bold'>{services[activeTab].name}</h1>
+                <h1 className='text-engi-navy-100 text-2xl lg:text-4xl mt-6 lg:mt-10 font-bold'>{services[activeTab].name}</h1>
               
-                <p className='mt-5'>{services[activeTab].description}</p>
+                <p className='mt-3 lg:mt-5 text-gray-600'>{services[activeTab].description}</p>
 
             </div>
           </div>
-          <div className='flex-1'>
-            <Link href="/">
+          <div className='flex-1 flex justify-center'>
+            <Link href="/services">
               <Image 
                 src={services[activeTab].image}
                 width={400}
                 height={400}
                 alt='Photo'
-                className=''
+                className='w-full max-w-[280px] lg:max-w-[400px]'
               
               ></Image>
             </Link>
