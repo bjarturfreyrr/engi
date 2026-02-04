@@ -69,7 +69,9 @@ const NavBar = () => {
 
           {/* Desktop CTA Button */}
           <div className='hidden lg:flex justify-self-end flex-row items-center gap-5'>
-              <Button className="w-[200px] h-[50px]" variant="glass">Fá tilboð</Button>
+              <Link href="/contact-us">
+                <Button className="w-[200px] h-[50px]" variant="glass">Fá tilboð</Button>
+              </Link>
           </div>
 
           {/* Mobile Hamburger */}

@@ -16,6 +16,7 @@ Klett
 Brími
 Eyna
 Enga
+hugra
 
 
 ```bash

@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import Image from 'next/image'
 import Link from 'next/link'
-import { MoveRight } from "lucide-react"
 import Services from "@/components/Services"
+import CTA from "@/components/CTA"
 import { motion } from "motion/react"
 
 const websites = [
@@ -141,28 +141,7 @@ const page = () => {
 
       <Services />
 
-      
-
-      <section className='grid grid-cols-1 lg:grid-cols-2 items-center min-h-[400px] lg:h-[600px] bg-gradient-to-b from-engi-blue-500 to-engi-green-500 mt-20 lg:mt-30'>
-            <motion.div 
-              className='flex justify-center lg:justify-end p-6 lg:p-0'
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              <div className='flex flex-col gap-6 lg:gap-10 bg-neutral-100 px-6 lg:px-10 py-10 lg:py-20 rounded-2xl lg:rounded-none w-full max-w-md lg:max-w-none'>
-                <h1 className='text-engi-navy-100 text-2xl lg:text-4xl'>Ertu með verkefni í huga?</h1>
-                <p className='text-neutral-600'>Við viljum heyra frá þér!</p>
-
-                <Link href="/contact-us" className='flex flex-row gap-3 items-center cursor-pointer group'>
-                      <Button className='bg-transparent text-engi-blue-500 hover:bg-transparent cursor-pointer p-0'>Hafa samband</Button>
-                      <MoveRight size={15} className='transition-transform text-engi-blue-500 transition-all duration-300 group-hover:translate-x-2 group-hover:text-engi-blue-500'/>
-                  </Link>
-              </div>
-            </motion.div>
-            <div className='hidden lg:block'></div>
-      </section>
+      <CTA />
     </div>
   )
 }

@@ -1,10 +1,9 @@
 "use client"
 
 import Image from 'next/image'
-import Link from 'next/link'
 import { motion } from "motion/react"
-import { MoveRight, Target, Users, Zap } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Target, Users, Zap } from "lucide-react"
+import CTA from "@/components/CTA"
 
 const values = [
   {
@@ -99,27 +98,10 @@ const page = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[400px] bg-gradient-to-b from-engi-blue-500 to-engi-green-500 mt-20">
-        <motion.div 
-          className="flex justify-center lg:justify-end p-10"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-        >
-          <div className="flex flex-col gap-6 bg-neutral-100 px-10 py-14 rounded-2xl max-w-md">
-            <h2 className="text-engi-navy-100 text-3xl font-bold">Ertu með verkefni í huga?</h2>
-            <p className="text-neutral-600">Við viljum heyra frá þér.</p>
-
-            <Link href="/contact-us" className="flex flex-row gap-3 items-center cursor-pointer group">
-              <Button className="bg-transparent text-engi-blue-500 hover:bg-transparent cursor-pointer p-0">Hafa samband</Button>
-              <MoveRight size={16} className="text-engi-blue-500 transition-all duration-300 group-hover:translate-x-2"/>
-            </Link>
-          </div>
-        </motion.div>
-        <div></div>
-      </section>
+      <CTA 
+        title="Ertu með verkefni í huga?"
+        description="Við viljum heyra frá þér."
+      />
     </div>
   )
 } 
