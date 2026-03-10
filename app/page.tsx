@@ -46,7 +46,9 @@ const page = () => {
             >
               <h1 className='text-4xl md:text-6xl lg:text-8xl font-bold'>Stafrænar lausnir <span className='text-blue-500 font-light'>fyrir þitt fyrirtæki</span></h1>
               <p className='text-gray-600 text-lg lg:text-xl'>Við sjáum um vefþróun, vefsíðugerð og umsjón. </p>
-              <Button className='mt-4 w-[200px] h-[50px] mx-auto lg:mx-0' variant='glass'>Skoða meira</Button>
+              <Button asChild className='mt-4 w-[200px] h-[50px] mx-auto lg:mx-0' variant='glass'>
+                <Link href="/services">Skoða meira</Link>
+              </Button>
             </motion.div>
             <div className='flex items-center justify-center'>
               <motion.div
