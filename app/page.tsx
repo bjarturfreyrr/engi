@@ -57,14 +57,14 @@ const page = () => {
                   y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.8 }
                 }}
               >
-                <Link href="/">
+                <div>
                   <Image src="/undraw_web-development_f0tp.svg"
                   alt="Image"
                   height={500}
                   width={500}
                   className="w-full max-w-[300px] lg:max-w-[500px]"
                   />
-                </Link>
+                </div>
               </motion.div>
             </div>
           </div>
