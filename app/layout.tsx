@@ -19,6 +19,16 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Móar",
   description: "Stafrænar Lausnir",
+  openGraph: {
+    title: "Móar",
+    description: "Stafrænar Lausnir",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Móar",
+    description: "Stafrænar Lausnir",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
