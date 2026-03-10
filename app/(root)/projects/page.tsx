@@ -67,7 +67,7 @@ const page = () => {
             </section>
 
             {/* PROJECTS */}
-                <section className='w-full flex flex-col items-center gap-10 lg:gap-15 px-4'>
+                <section className='w-full flex flex-col items-center gap-10 lg:gap-16 px-4'>
 
                         {websites.map((item, index) => (
                         <motion.div
@@ -80,7 +80,7 @@ const page = () => {
                         >
                             <Link href={item.page} className='w-full group block' target="_blank" rel="noopener noreferrer">
                             <div className='relative rounded-2xl overflow-hidden mx-2 lg:mx-10 p-4 transition-all duration-300 ease-out hover:bg-neutral-50 hover:shadow-lg hover:shadow-neutral-200/50 hover:-translate-y-1'>
-                                <div className='flex flex-col md:flex-row gap-6 lg:gap-15 justify-between relative'>
+                                <div className='flex flex-col md:flex-row gap-6 lg:gap-16 justify-between relative'>
                                 <Image 
                                     src={item.image}
                                     alt={item.title}

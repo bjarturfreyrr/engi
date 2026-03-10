@@ -35,11 +35,11 @@ const websites = [
 const page = () => {
   return (
     <div className='w-full'>
-      <section className='min-h-screen flex items-center justify-center px-5 lg:px-30 mt-20'>
-        <div className='w-full max-w-full mx-auto'>
-          <div className='min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-10 p-5 lg:p-32'>
+      <section className='min-h-screen flex items-center justify-center px-5 lg:px-12 xl:px-20 mt-20'>
+        <div className='w-full max-w-7xl mx-auto'>
+          <div className='min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-[5rem] xl:gap-[7rem] 2xl:gap-[9rem] items-center p-5 md:p-12 lg:p-20 xl:p-24'>
             <motion.div 
-              className='flex flex-col gap-8 lg:gap-14 text-center lg:text-left'
+              className='flex flex-col gap-8 lg:gap-14 text-center lg:text-left justify-center'
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
@@ -62,7 +62,7 @@ const page = () => {
                   alt="Image"
                   height={500}
                   width={500}
-                  className="w-full max-w-[300px] lg:max-w-[500px]"
+                  className="w-full max-w-[300px] md:max-w-[400px] lg:max-w-[500px]"
                   />
                 </div>
               </motion.div>
@@ -72,7 +72,7 @@ const page = () => {
       </section>
 
       {/* PROJECTS */}
-      <section className='w-full flex flex-col items-center gap-10 lg:gap-15 px-4'>
+      <section className='w-full flex flex-col items-center gap-10 lg:gap-16 px-4'>
           <motion.div 
             className='flex flex-col gap-5 items-center justify-center text-center'
             initial={{ opacity: 0, y: 30 }}
@@ -95,7 +95,7 @@ const page = () => {
               >
                 <Link href={item.page} className='w-full group block' target="_blank">
                   <div className='relative rounded-2xl overflow-hidden mx-2 lg:mx-10 p-4 transition-all duration-300 ease-out hover:bg-neutral-50 hover:shadow-lg hover:shadow-neutral-200/50 hover:-translate-y-1'>
-                    <div className='flex flex-col md:flex-row gap-6 lg:gap-15 justify-between relative'>
+                    <div className='flex flex-col md:flex-row gap-6 lg:gap-16 justify-between relative'>
                       <Image 
                         src={item.image}
                         alt={item.title}
