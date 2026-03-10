@@ -33,11 +33,11 @@ const NavBar = () => {
 
   return (
     <>
-      <div className='flex lg:grid lg:grid-cols-3 fixed z-60 top-0 left-0 right-0 items-center justify-between h-[80px] lg:h-[100px] px-5 lg:px-10 py-5 bg-white/20 backdrop-blur-md'>
+      <div className='flex lg:grid lg:grid-cols-3 fixed z-[60] top-0 left-0 right-0 items-center justify-between h-[80px] lg:h-[100px] px-5 lg:px-10 py-5 bg-white/20 backdrop-blur-md'>
           <div className='justify-self-start items-center align-center lg:ml-10 text-2xl text-white font-bold'>
               <Link href="/">
                   <Image
-                  src="/svg/multi-navy.svg"
+                  src="/moar.svg"
                   width={140}
                   height={140}
                   className="w-[120px] lg:w-[160px]"
@@ -99,7 +99,9 @@ const NavBar = () => {
                 {item.name}
               </Link>
             ))}
-            <Button className="w-[200px] h-[50px] mt-4" variant="glass">Fá tilboð</Button>
+            <Link href="/contact-us" onClick={() => setIsOpen(false)}>
+              <Button className="w-[200px] h-[50px] mt-4" variant="glass">Fá tilboð</Button>
+            </Link>
           </div>
         </div>
       )}

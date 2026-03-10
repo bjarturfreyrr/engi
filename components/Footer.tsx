@@ -10,7 +10,7 @@ const Footer = () => {
         <div className='flex flex-col gap-10 lg:gap-20 p-6 lg:p-20 max-w-7xl mx-auto w-full'>
             <div className='flex flex-col lg:flex-row gap-10 lg:gap-0 justify-between'>
                 <Image
-                    src="/svg/multi-navy.svg"
+                    src="/moar.svg"
                     width={160}
                     height={160}
                     className="w-[120px] lg:w-[160px]"
@@ -28,7 +28,7 @@ const Footer = () => {
 
                     <div className='flex flex-col gap-4 lg:gap-5'>
                         <p className='text-gray-500 text-sm'>Hafa Samband</p>
-                        <p className='text-engi-navy-100 text-base lg:text-lg cursor-pointer hover:text-engi-blue-500 transition-all duration-200'>engi@engi.is</p>
+                        <p className='text-engi-navy-100 text-base lg:text-lg cursor-pointer hover:text-engi-blue-500 transition-all duration-200'>moar@móar.is</p>
                     </div>
 
                     <div className='flex flex-col gap-4 lg:gap-5 col-span-2 lg:col-span-1'>
@@ -48,10 +48,12 @@ const Footer = () => {
                     <Mail className='cursor-pointer hover:text-engi-blue-500 transition-all duration-200'/>
                 </div>
 
-                <Link href="/contact-us" className='flex flex-row items-center cursor-pointer group'>
-                    <Button className='border-none bg-white-500 text-engi-navy-100 hover:bg-white-500 cursor-pointer'>Hafa samband</Button>
-                    <MoveRight size={15} className='transition-transform transition-all duration-300 group-hover:translate-x-2'/>
-                </Link>
+                <Button asChild className='border-none bg-transparent text-engi-navy-100 hover:bg-transparent cursor-pointer p-0 h-auto'>
+                    <Link href="/contact-us" className='flex flex-row items-center gap-2 cursor-pointer group'>
+                        Hafa samband
+                        <MoveRight size={15} className='transition-transform transition-all duration-300 group-hover:translate-x-2'/>
+                    </Link>
+                </Button>
 
             </div>
         </div>

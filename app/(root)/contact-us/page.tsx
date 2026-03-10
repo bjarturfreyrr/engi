@@ -1,16 +1,17 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { motion } from "motion/react"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone, MapPin, Loader2, CheckCircle } from "lucide-react"
 
 const contactInfo = [
   {
     icon: Mail,
     label: "Netfang",
-    value: "eingi@eingi.is"
+    value: "moar@móar.is"
   },
   {
     icon: Phone,
@@ -25,6 +26,45 @@ const contactInfo = [
 ]
 
 const page = () => {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [subject, setSubject] = useState("")
+  const [message, setMessage] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [success, setSuccess] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsLoading(true)
+    setError(null)
+    setSuccess(false)
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, subject, message }),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        throw new Error(data.error || "Eitthvað fór úrskeiðis.")
+      }
+
+      setSuccess(true)
+      setName("")
+      setEmail("")
+      setSubject("")
+      setMessage("")
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Eitthvað fór úrskeiðis.")
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -56,13 +96,28 @@ const page = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <form className="flex flex-col gap-6">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                {error && (
+                  <div className="p-4 rounded-lg bg-red-50 text-red-700 text-sm">
+                    {error}
+                  </div>
+                )}
+                {success && (
+                  <div className="flex items-center gap-2 p-4 rounded-lg bg-green-50 text-green-700 text-sm">
+                    <CheckCircle className="w-5 h-5 shrink-0" />
+                    <span>Takk fyrir! Við munum hafa samband við þig fljótlega.</span>
+                  </div>
+                )}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
                     <label className="text-sm text-engi-navy-100">Nafn</label>
                     <Input 
                       type="text" 
                       placeholder="Nafnið þitt"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
+                      disabled={isLoading}
                       className="h-12 border-neutral-200 focus:border-engi-blue-500"
                     />
                   </div>
@@ -71,6 +126,10 @@ const page = () => {
                     <Input 
                       type="email" 
                       placeholder="Netfangið þitt"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      disabled={isLoading}
                       className="h-12 border-neutral-200 focus:border-engi-blue-500"
                     />
                   </div>
@@ -81,6 +140,9 @@ const page = () => {
                   <Input 
                     type="text" 
                     placeholder="Hvað getum við gert fyrir þig?"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                    disabled={isLoading}
                     className="h-12 border-neutral-200 focus:border-engi-blue-500"
                   />
                 </div>
@@ -89,15 +151,27 @@ const page = () => {
                   <label className="text-sm text-engi-navy-100">Skilaboð</label>
                   <Textarea 
                     placeholder="Segðu okkur meira um verkefnið þitt..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    required
+                    disabled={isLoading}
                     className="min-h-[150px] border-neutral-200 focus:border-engi-blue-500 resize-none"
                   />
                 </div>
 
                 <Button 
                   type="submit"
-                  className="h-12 bg-engi-blue-500 hover:bg-engi-blue-500/90 text-white mt-2 cursor-pointer"
+                  disabled={isLoading}
+                  className="h-12 bg-engi-blue-500 hover:bg-engi-blue-500/90 text-white mt-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Senda skilaboð
+                  {isLoading ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Sendi...
+                    </span>
+                  ) : (
+                    "Senda skilaboð"
+                  )}
                 </Button>
               </form>
             </motion.div>
