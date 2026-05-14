@@ -40,7 +40,7 @@ const page = () => {
                 Stofan
               </h1>
               <p className="text-gray-600 text-lg leading-relaxed">
-                ENGI er vefþróunarstofa sem sérhæfir sig í að búa til nútímalegar og árangursdrifnar vefsíður fyrir íslensk fyrirtæki.
+                MÓAR er vefþróunarstofa sem sérhæfir sig í að búa til nútímalegar og árangursdrifnar vefsíður fyrir íslensk fyrirtæki.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed">
                 Við sameinum tækniþekkingu og skapandi hugsun til að koma vörumerkinu þínu á framfæri á netinu.
