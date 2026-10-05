@@ -1,0 +1,380 @@
+/* Nýja Móar-forsíðan (/ny). Allt er afmarkað undir .ny svo það rekist ekki á gömlu síðuna. */
+
+.ny {
+  --ny-bg: #0C2233;
+  --ny-panel: #11304A;
+  --ny-line: #264A66;
+  --ny-line-soft: #1D405B;
+  --ny-dot: #2B4A61;
+  --ny-text: #E6EEF3;
+  --ny-muted: #B7C7D2;
+  --ny-subtle: #8FA6B5;
+  --ny-green: #34D399;
+  --ny-green-dark: #0E7A55;
+  --ny-blue: #2563EB;
+  --ny-blue-light: #3B82F6;
+  --ny-light: #EEF2F4;
+  --ny-gutter: clamp(16px, 3vw, 40px);
+
+  font-family: var(--font-ny), system-ui, sans-serif;
+  color: var(--ny-text);
+  background: var(--ny-bg);
+  overflow-x: clip;
+  width: 100%;
+  position: relative;
+}
+.ny a { color: var(--ny-text); }
+.ny a:hover { color: var(--ny-green); }
+.ny :focus-visible { outline: 2px solid var(--ny-green); outline-offset: 4px; }
+.ny input::placeholder, .ny textarea::placeholder { color: #5F7A8C; }
+
+/* ---------- Grunnar ---------- */
+.ny-wrap { max-width: 1360px; margin: 0 auto; }
+.ny-section { padding: clamp(80px, 10vw, 160px) var(--ny-gutter); box-sizing: border-box; border-top: 1px solid var(--ny-line-soft); }
+.ny-grid-bg {
+  background-image:
+    linear-gradient(rgba(143,166,181,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143,166,181,.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+.ny-eyebrow { margin: 0; font-size: 14px; font-weight: 500; color: var(--ny-green); }
+.ny-h2 { margin: 0; font-weight: 700; font-size: clamp(38px, 4.6vw, 68px); line-height: 1; letter-spacing: -0.04em; }
+.ny-muted { color: var(--ny-muted); }
+.ny-skip { position: absolute; left: 16px; top: -100px; z-index: 60; padding: 12px 18px; background: var(--ny-green); color: var(--ny-bg) !important; font-weight: 700; text-decoration: none; }
+.ny-skip:focus { top: 12px; }
+.ny-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.ny-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  min-height: 54px; padding: 0 26px; border-radius: 8px;
+  font-weight: 700; font-size: 17px; text-decoration: none; cursor: pointer; border: 0;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.ny-btn:hover { transform: translateY(-2px); box-shadow: 0 0 0 4px rgba(52,211,153,.25); }
+.ny-btn .arr { transition: transform .25s ease; }
+.ny-btn:hover .arr { transform: translateX(6px); }
+.ny-btn--green, .ny a.ny-btn--green, .ny a.ny-btn--green:hover { background: var(--ny-green); color: var(--ny-bg); }
+.ny-btn--ghost, .ny a.ny-btn--ghost { border: 1px solid var(--ny-dot); color: var(--ny-text); font-weight: 500; }
+.ny-btn--dark-outline, .ny a.ny-btn--dark-outline, .ny a.ny-btn--dark-outline:hover { border: 1px solid #07141F; color: #07141F; }
+
+.ny-dots { display: flex; gap: 7px; }
+.ny-dots span { width: 11px; height: 11px; border-radius: 50%; background: var(--ny-dot); }
+.ny-bar { display: block; border-radius: 0 999px 999px 0; }
+
+/* ---------- Haus ---------- */
+.ny-header { position: sticky; top: 0; z-index: 40; background: rgba(12,34,51,.8); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--ny-line-soft); }
+.ny-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 64px; padding: 0 var(--ny-gutter); max-width: 1440px; margin: 0 auto; box-sizing: border-box; }
+.ny-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; min-height: 44px; }
+.ny-logo__bars { display: flex; flex-direction: column; gap: 3px; width: 30px; }
+.ny-logo__bars span { display: block; height: 5px; border-radius: 0 4px 4px 0; }
+.ny-logo__word { font-weight: 700; font-size: 22px; letter-spacing: -0.03em; color: #FFFFFF; }
+.ny-nav { display: flex; gap: 32px; }
+.ny-nav a { text-decoration: none; color: var(--ny-muted); font-size: 15px; font-weight: 500; padding: 12px 0; }
+.ny-nav a:hover { color: #FFFFFF; }
+.ny-header .ny-btn { min-height: 44px; padding: 0 18px; font-size: 15px; border-radius: 6px; }
+.ny-prog { display: block; height: 2px; background: var(--ny-green); transform-origin: left; }
+
+/* ---------- Hero ---------- */
+.ny-hero { position: relative; padding: clamp(56px, 8vw, 120px) var(--ny-gutter) clamp(72px, 9vw, 140px); box-sizing: border-box; }
+.ny-hero__glow { position: absolute; inset: 0; background: radial-gradient(60% 60% at 70% 40%, rgba(37,99,235,.18), transparent 70%); pointer-events: none; }
+.ny-hero__inner { position: relative; display: flex; flex-wrap: wrap; gap: clamp(40px, 5vw, 72px); align-items: center; }
+.ny-hero__text { flex: 1.2 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
+.ny-hero h1 { margin: 0; font-weight: 700; line-height: .95; letter-spacing: -0.05em; font-size: clamp(56px, 8vw, 128px); }
+.ny-hero__lead { margin: 0; max-width: 540px; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.6; color: var(--ny-muted); }
+.ny-hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+.ny-hero__card { flex: 1 1 400px; min-width: 0; border: 1px solid var(--ny-line); border-radius: 20px; background: var(--ny-panel); box-shadow: 0 40px 80px -30px rgba(0,0,0,.5); padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; gap: 16px; }
+.ny-layer { display: flex; align-items: center; justify-content: space-between; height: 72px; padding: 0 24px; border-radius: 0 999px 999px 0; box-sizing: border-box; font-weight: 700; font-size: 24px; letter-spacing: -0.02em; }
+.ny-layer--blue { background: var(--ny-blue); color: #FFFFFF; }
+.ny-layer--green { background: var(--ny-green); color: var(--ny-bg); width: 88%; }
+.ny-layer--outline { border: 2px solid var(--ny-text); width: 95%; }
+.ny-live { display: flex; align-items: center; gap: 10px; }
+.ny-live-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ny-green); flex: none; }
+.ln { display: block; overflow: hidden; padding-bottom: .06em; }
+.ln > span { display: block; }
+
+/* ---------- Fyrir hverja (rúllandi borðar) ---------- */
+.ny-for { border-top: 1px solid var(--ny-line-soft); border-bottom: 1px solid var(--ny-line-soft); padding: clamp(40px, 5vw, 64px) 0; overflow: hidden; display: flex; flex-direction: column; gap: 22px; }
+.ny-for h2 { margin: 0 auto; padding: 0 var(--ny-gutter); font-size: 15px; font-weight: 500; color: var(--ny-subtle); max-width: 1360px; width: 100%; box-sizing: border-box; }
+.ny-marq-row { display: flex; overflow: hidden; }
+.ny-marq { display: flex; align-items: center; white-space: nowrap; width: max-content; }
+.ny-marq--big { gap: 40px; padding-right: 40px; font-weight: 700; font-size: clamp(36px, 5vw, 72px); letter-spacing: -0.04em; }
+.ny-marq--big .ny-bar { width: 44px; height: 12px; display: inline-block; }
+.ny-marq--pills { gap: 14px; padding-right: 14px; }
+.ny-pill { padding: 10px 20px; border: 1px solid var(--ny-line); border-radius: 999px; font-size: 17px; color: var(--ny-muted); }
+.ny-pill--green { background: var(--ny-green); border-color: var(--ny-green); color: var(--ny-bg); font-weight: 700; }
+.ny-pill--blue { background: var(--ny-blue); border-color: var(--ny-blue); color: #FFFFFF; font-weight: 700; }
+
+/* ---------- Smíðin ---------- */
+.ny-build { position: relative; padding: clamp(64px, 8vw, 120px) var(--ny-gutter); box-sizing: border-box; }
+.ny-build__pin { display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 72px); align-items: center; padding: 32px 0; }
+.ny-build__text { flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
+.ny-steps { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.ny-steps li { display: flex; gap: 16px; padding: 14px 0; border-top: 1px solid var(--ny-line); }
+.ny-steps li:last-child { border-bottom: 1px solid var(--ny-line); }
+.ny-steps__n { color: var(--ny-green); font-size: 15px; font-weight: 500; }
+.ny-steps__t { display: flex; flex-direction: column; gap: 4px; }
+.ny-steps__t b { color: #FFFFFF; font-size: 16px; }
+.ny-steps__t span { color: var(--ny-subtle); font-size: 16px; }
+.ny-track { height: 3px; background: var(--ny-line-soft); border-radius: 3px; overflow: hidden; }
+.ny-track span { display: block; height: 100%; background: var(--ny-green); transform-origin: left; }
+.ny-build__visual { flex: 1.4 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+
+.ny-browser { position: relative; border: 1px solid var(--ny-line); border-radius: 12px; background: var(--ny-panel); box-shadow: 0 40px 80px -30px rgba(0,0,0,.6); }
+.ny-browser__bar { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--ny-line); }
+.ny-url { position: relative; flex: 1; height: 30px; border-radius: 6px; background: var(--ny-bg); font-size: 13px; display: flex; align-items: center; padding: 0 12px; }
+.ny-url > span { position: absolute; left: 12px; display: inline-flex; align-items: center; gap: 6px; }
+.url-old { color: var(--ny-subtle); opacity: 0; }
+.url-new { color: var(--ny-text); }
+.ny-browser__live { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ny-green); }
+.ny-browser__live .ny-live-dot { width: 8px; height: 8px; }
+.ny-browser__body { position: relative; padding: 20px; display: flex; flex-direction: column; gap: 14px; aspect-ratio: 16 / 11; box-sizing: border-box; overflow: hidden; border-radius: 0 0 12px 12px; }
+.wire { position: absolute; inset: 20px; border: 1px dashed var(--ny-dot); border-radius: 6px; pointer-events: none; }
+.ny-mock-nav { display: flex; justify-content: space-between; align-items: center; height: 34px; padding: 0 12px; border: 1px dashed var(--ny-dot); border-radius: 6px; }
+.ny-mock-nav__links { display: flex; gap: 10px; }
+.ny-mock-nav__links span { width: 36px; height: 8px; border-radius: 3px; background: var(--ny-dot); }
+.ny-mock-hero { position: relative; flex: 1.3; border-radius: 8px; background: var(--ny-blue); padding: 22px; display: flex; gap: 18px; align-items: stretch; overflow: hidden; }
+.ny-mock-hero__text { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 12px; min-width: 0; }
+.ny-mock-head { position: relative; display: block; height: 44px; }
+.ny-mock-head > span { position: absolute; inset: 0; }
+.old-head { display: flex; flex-direction: column; gap: 6px; opacity: 0; }
+.new-head { font-weight: 700; font-size: clamp(16px, 1.6vw, 22px); line-height: 1.05; letter-spacing: -0.02em; color: #FFFFFF; }
+.ny-line { display: block; border-radius: 4px; }
+.photo { flex: 0 0 38%; border-radius: 8px; background: #1B4F7A; position: relative; overflow: hidden; }
+.sun { position: absolute; top: 18%; right: 20%; width: 18%; aspect-ratio: 1; border-radius: 50%; background: #FDE68A; }
+.photo svg { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 60%; }
+.ny-mock-cards { flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.ny-mock-card { border: 1px dashed var(--ny-dot); border-radius: 6px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.ny-mock-card .ico { display: block; width: 22px; height: 22px; border-radius: 5px; }
+.ny-mock-card .ny-line { height: 7px; border-radius: 3px; background: var(--ny-subtle); }
+.cms { position: absolute; right: 18px; bottom: 18px; width: 52%; min-width: 220px; background: #FFFFFF; color: var(--ny-bg); border-radius: 12px; box-shadow: 0 24px 48px -12px rgba(0,0,0,.5); padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; opacity: 0; }
+.cms__top { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 700; color: #4A6578; }
+.cms__label { font-size: 11px; color: #4A6578; }
+.cms__field { display: flex; align-items: center; height: 34px; padding: 0 10px; border: 2px solid var(--ny-blue); border-radius: 6px; font-size: 14px; font-weight: 500; white-space: nowrap; }
+.cms__caret { display: inline-block; background: var(--ny-blue); width: 2px; height: 16px; margin-left: 2px; }
+.cms-save { align-self: flex-end; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 6px; background: var(--ny-green); font-size: 12px; font-weight: 700; }
+.toast { position: absolute; left: 50%; top: 16px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: var(--ny-bg); border: 1px solid var(--ny-green); color: #FFFFFF; font-size: 14px; font-weight: 500; white-space: nowrap; box-shadow: 0 16px 32px -10px rgba(0,0,0,.6); }
+.toast__ico { display: inline-flex; width: 20px; height: 20px; border-radius: 50%; background: var(--ny-green); align-items: center; justify-content: center; }
+.stamp { position: absolute; right: -16px; bottom: 32px; padding: 10px 16px; border: 3px solid var(--ny-green); border-radius: 10px; color: var(--ny-green); background: var(--ny-bg); font-weight: 700; font-size: 18px; letter-spacing: .04em; transform: rotate(-8deg); }
+.ny-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.ny-chip { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: var(--ny-panel); border: 1px solid var(--ny-line); font-size: 15px; }
+.ny-chip .ny-live-dot { width: 8px; height: 8px; }
+
+/* ---------- Innifalið ---------- */
+.ny-incl { max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: clamp(40px, 6vw, 96px); }
+.ny-incl__intro { flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
+.ny-incl__layers { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
+.ny-incl__layers .ny-layer { height: 56px; padding: 0 20px; font-size: 20px; }
+.ny-incl__layers .ny-layer--blue { width: 100%; }
+.ny-incl__layers .ny-layer--green { width: 84%; }
+.ny-incl__layers .ny-layer--outline { width: 92%; border-width: 1px; }
+.ny-spec { flex: 1.4 1 440px; min-width: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ny-line); }
+.ny-spec li { display: flex; gap: clamp(16px, 2.4vw, 32px); padding: 26px 12px; border-bottom: 1px solid var(--ny-line); transition: background .25s ease; }
+.ny-spec li:hover { background: rgba(52,211,153,.06); }
+.ny-spec svg { flex: none; margin-top: 4px; }
+.ny-spec__t { display: flex; flex-direction: column; gap: 6px; }
+.ny-spec__t b { font-size: clamp(22px, 2.2vw, 28px); letter-spacing: -0.02em; }
+.ny-spec__t span { color: var(--ny-muted); font-size: 16px; line-height: 1.55; }
+.ny-tag { font-size: 13px; font-weight: 500; color: var(--ny-bg); background: var(--ny-blue-light); padding: 3px 10px; border-radius: 999px; vertical-align: middle; letter-spacing: 0; }
+
+/* ---------- Verkin (lárétt skrun) ---------- */
+.ny-work { position: relative; border-top: 1px solid var(--ny-line-soft); }
+.ny-work__pin { padding: clamp(56px, 6vw, 88px) 0; box-sizing: border-box; overflow-x: auto; }
+.ny-work__head { max-width: 1360px; margin: 0 auto clamp(32px, 4vw, 56px); padding: 0 var(--ny-gutter); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px; box-sizing: border-box; }
+.ny-work__head > div:first-child { display: flex; flex-direction: column; gap: 20px; }
+.ny-work__hint { display: flex; align-items: center; gap: 14px; font-size: 13px; color: var(--ny-subtle); width: 240px; }
+.ny-work__hint .ny-track { flex: 1; height: 2px; }
+.htrack { display: flex; gap: 32px; padding: 0 var(--ny-gutter); width: max-content; }
+.ny-case { width: min(78vw, 760px); flex: none; display: flex; flex-direction: column; gap: 18px; text-decoration: none; }
+.ny-case__frame { border: 1px solid var(--ny-line); border-radius: 12px; overflow: hidden; background: var(--ny-panel); }
+.ny-case__bar { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-bottom: 1px solid var(--ny-line); font-size: 12px; color: var(--ny-subtle); }
+.ny-case__bar .ny-dots span { width: 9px; height: 9px; }
+.ny-case__img { position: relative; overflow: hidden; aspect-ratio: 16 / 9; }
+.ny-case__img img { object-fit: cover; object-position: top; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+.ny-case:hover .ny-case__img img { transform: scale(1.04); }
+.ny-case__meta { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.ny-case__meta b { font-size: clamp(26px, 2.6vw, 36px); letter-spacing: -0.03em; }
+.ny-case__meta span { font-size: 14px; color: var(--ny-subtle); }
+
+/* ---------- Verð ---------- */
+.ny-price { background: var(--ny-light); color: #07141F; padding: clamp(80px, 10vw, 160px) var(--ny-gutter); box-sizing: border-box; }
+.ny-price__inner { max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }
+.ny-price__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; }
+.ny-price__head > div { display: flex; flex-direction: column; gap: 20px; }
+.ny-price .ny-eyebrow { color: var(--ny-green-dark); }
+.ny-price__head p:last-child { margin: 0; max-width: 360px; font-size: 17px; line-height: 1.6; color: #2B4A61; }
+.ny-plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.ny-plan { border: 1px solid #C9D5DD; border-radius: 14px; background: #FFFFFF; overflow: hidden; display: flex; flex-direction: column; }
+.ny-plan__bar { display: flex; justify-content: space-between; padding: 14px 22px; border-bottom: 1px solid #DCE4EA; font-size: 13px; font-weight: 500; color: #4A6578; }
+.ny-plan__body { padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 26px; flex: 1; }
+.ny-plan__body > p { margin: 0; font-size: 17px; color: #2B4A61; }
+.ny-plan__price { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.ny-plan__price b { font-size: clamp(56px, 6vw, 80px); line-height: 1; letter-spacing: -0.05em; }
+.ny-plan__price span { font-size: 14px; font-weight: 500; color: #4A6578; }
+.ny-plan ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.5; color: #1B3447; }
+.ny-plan li { display: flex; gap: 10px; }
+.ny-plan li svg { flex: none; margin-top: 3px; }
+.ny-plan .ny-btn { margin-top: auto; }
+.ny-plan--dark { background: #07141F; border-color: #07141F; color: var(--ny-text); }
+.ny-plan--dark .ny-plan__bar { border-color: var(--ny-line); color: var(--ny-subtle); }
+.ny-plan--dark .ny-plan__body > p, .ny-plan--dark ul { color: var(--ny-muted); }
+.ny-plan--dark .ny-plan__price span { color: var(--ny-subtle); }
+.ny-price__note { margin: 0; font-size: 15px; line-height: 1.7; color: #4A6578; }
+
+/* ---------- Ferlið ---------- */
+.ny-proc { max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: clamp(40px, 6vw, 96px); }
+.ny-proc__intro { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.ny-proc__list { flex: 1.3 1 420px; min-width: 0; position: relative; padding-left: 44px; }
+.ny-proc__rail, .tl { position: absolute; left: 9px; top: 8px; bottom: 8px; width: 2px; background: var(--ny-line-soft); }
+.tl { background: var(--ny-green); transform-origin: top; }
+.ny-proc ol { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 48px; }
+.ny-proc li { position: relative; display: flex; flex-direction: column; gap: 8px; }
+.ny-proc__node { position: absolute; left: -44px; top: 4px; width: 20px; height: 20px; border-radius: 50%; background: var(--ny-bg); border: 2px solid var(--ny-green); box-sizing: border-box; }
+.ny-proc li:last-child .ny-proc__node { background: var(--ny-green); }
+.ny-proc__k { font-size: 13px; font-weight: 500; color: var(--ny-subtle); }
+.ny-proc h3 { margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+.ny-proc p { margin: 0; font-size: 17px; line-height: 1.6; color: var(--ny-muted); }
+
+/* ---------- Hafðu samband ---------- */
+.ny-contact { max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(40px, 5vw, 72px); }
+.ny-contact__big { margin: 0; font-weight: 700; font-size: clamp(64px, 11vw, 176px); line-height: .88; letter-spacing: -0.06em; }
+.ny-contact__row { display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 80px); }
+.ny-contact__info { flex: 1 1 260px; display: flex; flex-direction: column; gap: 18px; }
+.ny-contact__info p { margin: 0; font-size: 19px; line-height: 1.6; color: var(--ny-muted); max-width: 380px; }
+.ny-contact__info a { font-size: 18px; font-weight: 500; min-height: 44px; display: inline-flex; align-items: center; }
+.ny-form { flex: 1.7 1 440px; min-width: 0; border: 1px solid var(--ny-line); border-radius: 20px; background: var(--ny-panel); padding: clamp(20px, 2.8vw, 36px); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px 28px; font-size: 15px; box-sizing: border-box; }
+.ny-form label { display: flex; flex-direction: column; gap: 8px; color: var(--ny-muted); font-weight: 500; }
+.ny-form .full { grid-column: 1 / -1; }
+.ny-form input, .ny-form textarea { font: inherit; min-height: 46px; padding: 0 12px; border: 1px solid var(--ny-line); border-radius: 10px; background: var(--ny-bg); color: #FFFFFF; font-size: 16px; box-sizing: border-box; }
+.ny-form textarea { padding: 12px; resize: vertical; }
+.ny-form input:focus, .ny-form textarea:focus { border-color: var(--ny-green); outline: none; }
+.ny-form .ny-btn { justify-self: start; }
+.ny-form .ny-btn:disabled { opacity: .6; cursor: progress; }
+.ny-form__status { grid-column: 1 / -1; margin: 0; font-size: 16px; }
+.ny-form__status--ok { color: var(--ny-green); }
+.ny-form__status--err { color: #FCA5A5; }
+
+/* ---------- Fótur ---------- */
+.ny-footer { border-top: 1px solid var(--ny-line-soft); padding: 0 var(--ny-gutter) 36px; box-sizing: border-box; overflow: hidden; }
+.ny-footer__inner { max-width: 1360px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+.ny-footer__mark { display: flex; align-items: flex-end; gap: clamp(16px, 2vw, 32px); padding-top: 48px; }
+.ny-footer__bars { display: flex; flex-direction: column; gap: clamp(6px, 1vw, 14px); width: clamp(64px, 12vw, 180px); margin-bottom: clamp(14px, 2.4vw, 40px); }
+.ny-footer__bars .ny-bar { height: clamp(10px, 1.6vw, 24px); }
+.ny-footer__word { font-weight: 700; font-size: clamp(96px, 22vw, 340px); line-height: .8; letter-spacing: -0.07em; color: #102A3D; }
+.ny-footer__bottom { display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ny-subtle); border-top: 1px solid var(--ny-line-soft); padding-top: 24px; }
+.ny-footer__bottom nav { display: flex; flex-wrap: wrap; gap: 24px; }
+.ny-footer__bottom a { color: var(--ny-muted); }
+
+/* ================= Hreyfingar ================= */
+@keyframes ny-lineUp { from { transform: translateY(110%); } to { transform: none; } }
+@keyframes ny-fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes ny-barIn { from { transform: scaleX(0); } to { transform: none; } }
+@keyframes ny-blink { 50% { opacity: 0; } }
+@keyframes ny-typeIn { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes ny-marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes ny-pulse { 0% { box-shadow: 0 0 0 0 rgba(52,211,153,.6); } 100% { box-shadow: 0 0 0 10px rgba(52,211,153,0); } }
+
+.ny .ln > span { animation: ny-lineUp 1s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--d, .2s); }
+.ny .load-up { animation: ny-fadeUp .8s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--d, 0s); }
+.ny .load-bar { transform-origin: left; animation: ny-barIn .9s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--d, 0s); }
+.ny .cms__caret { animation: ny-blink 1s steps(1) infinite; }
+.ny .ny-marq { animation: ny-marq 40s linear infinite; }
+.ny .ny-marq--pills { animation-direction: reverse; animation-duration: 34s; }
+.ny .ny-live-dot.pulse { animation: ny-pulse 1.6s ease-out infinite; }
+
+@keyframes ny-rvUp { from { opacity: 0; transform: translateY(70px); } to { opacity: 1; transform: none; } }
+@keyframes ny-rvL { from { opacity: 0; transform: translateX(-80px); } to { opacity: 1; transform: none; } }
+@keyframes ny-grow { from { transform: scaleX(0); } to { transform: none; } }
+@keyframes ny-growY { from { transform: scaleY(0); } to { transform: none; } }
+@keyframes ny-heroOut { to { transform: scale(.92) translateY(-40px); opacity: .1; filter: blur(6px); } }
+@keyframes ny-litUp { from { opacity: .28; } to { opacity: 1; } }
+@keyframes ny-show { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ny-hide { from { opacity: 1; } to { opacity: 0; } }
+@keyframes ny-popIn { from { opacity: 0; transform: scale(.9); } to { opacity: 1; transform: none; } }
+@keyframes ny-paint { from { background-color: #13293A; } to { background-color: #2563EB; } }
+@keyframes ny-paintG { from { background-color: #13293A; } to { background-color: #34D399; } }
+@keyframes ny-hmove { from { transform: none; } to { transform: translateX(calc(-100% + 100vw - 64px)); } }
+@keyframes ny-clipUp { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes ny-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes ny-dashOff { from { border-color: #2B4A61; } to { border-color: transparent; } }
+@keyframes ny-cmsIn { from { opacity: 0; transform: translateX(60px) scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes ny-cmsOut { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(20px) scale(.96); } }
+@keyframes ny-glow { from { box-shadow: 0 40px 80px -30px rgba(0,0,0,.6), 0 0 0 0 rgba(52,211,153,0); } to { box-shadow: 0 40px 80px -30px rgba(0,0,0,.6), 0 0 0 3px #34D399, 0 0 80px 10px rgba(52,211,153,.28); } }
+@keyframes ny-liftUp { from { transform: none; } to { transform: translateY(-10px) scale(1.015); } }
+@keyframes ny-toastIn { from { opacity: 0; transform: translate(-50%, -30px); } to { opacity: 1; transform: translate(-50%, 0); } }
+@keyframes ny-chipIn { from { opacity: 0; transform: translateY(24px) scale(.8); } to { opacity: 1; transform: none; } }
+@keyframes ny-stamp { 0% { opacity: 0; transform: scale(2.2) rotate(-14deg); } 60% { opacity: 1; transform: scale(.92) rotate(-8deg); } 100% { opacity: 1; transform: scale(1) rotate(-8deg); } }
+
+@supports (animation-timeline: view()) {
+  .ny .ny-prog { animation: ny-progress linear both; animation-timeline: scroll(root); }
+  .ny .rv { animation: ny-rvUp linear both; animation-timeline: view(); animation-range: entry 0% entry 80%; }
+  .ny .rv.s2 { animation-range: entry 12% entry 92%; }
+  .ny .rv.s3 { animation-range: entry 24% entry 100%; }
+  .ny .rv-l { animation: ny-rvL linear both; animation-timeline: view(); animation-range: entry 0% cover 35%; }
+  .ny .grow { transform-origin: left; animation: ny-grow linear both; animation-timeline: view(); animation-range: entry 20% cover 50%; }
+  .ny .grow.s2 { animation-range: entry 30% cover 55%; }
+  .ny .grow.s3 { animation-range: entry 40% cover 60%; }
+  .ny .hero-out { animation: ny-heroOut linear both; animation-timeline: view(); animation-range: exit 0% exit 100%; }
+  .ny .clip-up { animation: ny-clipUp linear both; animation-timeline: view(); animation-range: entry 10% cover 40%; }
+
+  /* Smíðin: kaflinn situr fastur og vefurinn byggist upp við skrun */
+  .ny .ny-build { height: 3800px; view-timeline-name: --build; }
+  .ny .ny-build__pin { position: sticky; top: 64px; }
+  .ny .st1 { animation: ny-litUp linear both; animation-timeline: --build; animation-range: contain 0% contain 14%; }
+  .ny .st2 { animation: ny-litUp linear both; animation-timeline: --build; animation-range: contain 16% contain 34%; }
+  .ny .st3 { animation: ny-litUp linear both; animation-timeline: --build; animation-range: contain 37% contain 52%; }
+  .ny .st4 { animation: ny-litUp linear both; animation-timeline: --build; animation-range: contain 62% contain 76%; }
+  .ny .wire { animation: ny-show linear both, ny-hide linear both; animation-timeline: --build, --build; animation-range: contain 0% contain 12%, contain 62% contain 68%; }
+  .ny .blk { animation: ny-popIn linear both; animation-timeline: --build; animation-range: contain 16% contain 26%; }
+  .ny .blk.b2 { animation-range: contain 20% contain 30%; }
+  .ny .blk.b3 { animation-range: contain 24% contain 34%; }
+  .ny .paint { animation: ny-paint linear both; animation-timeline: --build; animation-range: contain 26% contain 36%; }
+  .ny .paint-g { animation: ny-paintG linear both; animation-timeline: --build; animation-range: contain 28% contain 37%; }
+  .ny .blk.b2.paint { animation: ny-popIn linear both, ny-paint linear both; animation-timeline: --build, --build; animation-range: contain 20% contain 30%, contain 26% contain 36%; }
+  .ny .blk.dash { animation: ny-popIn linear both, ny-dashOff linear both; animation-timeline: --build, --build; animation-range: contain 16% contain 26%, contain 62% contain 68%; }
+  .ny .dash { animation: ny-dashOff linear both; animation-timeline: --build; animation-range: contain 62% contain 68%; }
+  .ny .txt { transform-origin: left; animation: ny-grow linear both; animation-timeline: --build; animation-range: contain 38% contain 44%; }
+  .ny .txt.t2 { animation-range: contain 40% contain 46%; }
+  .ny .txt.t3 { animation-range: contain 42% contain 48%; }
+  .ny .photo { animation: ny-clipUp linear both; animation-timeline: --build; animation-range: contain 40% contain 47%; }
+  .ny .sun { animation: ny-popIn linear both; animation-timeline: --build; animation-range: contain 45% contain 49%; }
+  .ny .cms { animation: ny-cmsIn linear both, ny-cmsOut linear both; animation-timeline: --build, --build; animation-range: contain 46% contain 50%, contain 58% contain 62%; }
+  .ny .cms-type { animation: ny-typeIn linear both; animation-timeline: --build; animation-range: contain 50% contain 55%; }
+  .ny .cms-save { animation: ny-popIn linear both; animation-timeline: --build; animation-range: contain 55% contain 57%; }
+  .ny .new-head { animation: ny-show linear both; animation-timeline: --build; animation-range: contain 56% contain 58%; }
+  .ny .old-head { animation: ny-hide linear both; animation-timeline: --build; animation-range: contain 56% contain 58%; }
+  .ny .url-old { animation: ny-hide linear both; animation-timeline: --build; animation-range: contain 64% contain 68%; }
+  .ny .url-new { animation: ny-show linear both; animation-timeline: --build; animation-range: contain 66% contain 70%; }
+  .ny .ny-browser { animation: ny-glow linear both, ny-liftUp linear both; animation-timeline: --build, --build; animation-range: contain 68% contain 76%, contain 68% contain 76%; }
+  .ny .ny-browser__live { animation: ny-popIn linear both; animation-timeline: --build; animation-range: contain 70% contain 74%; }
+  .ny .toast { animation: ny-toastIn linear both; animation-timeline: --build; animation-range: contain 74% contain 79%; }
+  .ny .stamp { animation: ny-stamp linear both; animation-timeline: --build; animation-range: contain 78% contain 84%; }
+  .ny .chip { animation: ny-chipIn linear both; animation-timeline: --build; animation-range: contain 80% contain 84%; }
+  .ny .chip.c2 { animation-range: contain 82% contain 86%; }
+  .ny .chip.c3 { animation-range: contain 84% contain 88%; }
+  .ny .chip.c4 { animation-range: contain 86% contain 90%; }
+  .ny .bprog { transform-origin: left; animation: ny-progress linear both; animation-timeline: --build; animation-range: contain 0% contain 90%; }
+
+  /* Verkin: kaflinn situr fastur og verkin renna lárétt */
+  .ny .ny-work { height: 2600px; view-timeline-name: --hs; }
+  .ny .ny-work__pin { position: sticky; top: 64px; overflow: hidden; }
+  .ny .htrack { animation: ny-hmove linear both; animation-timeline: --hs; animation-range: contain 5% contain 95%; }
+  .ny .hbar { transform-origin: left; animation: ny-progress linear both; animation-timeline: --hs; animation-range: contain 5% contain 95%; }
+
+  .ny .tl { animation: ny-growY linear both; animation-timeline: view(); animation-range: entry 40% cover 70%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ny *, .ny *::before, .ny *::after { animation: none !important; transition: none !important; }
+}
+
+@media (max-width: 860px) {
+  .ny .ny-nav, .ny .ny-hide-sm { display: none !important; }
+  /* Smíðin þarf að passa á einn símaskjá á meðan kaflinn situr fastur */
+  .ny .ny-build__pin { gap: 24px; padding: 8px 0; }
+  .ny .ny-build__text { gap: 14px; }
+  .ny .ny-build .ny-h2 { font-size: 32px; }
+  .ny .ny-steps li { padding: 8px 0; }
+  .ny .ny-steps__t span { display: none; }
+  .ny .ny-chips { display: none; }
+  .ny .stamp { font-size: 14px; padding: 6px 10px; right: -6px; }
+}
