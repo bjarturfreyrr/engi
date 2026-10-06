@@ -91,6 +91,7 @@ html:has(.ny) body { margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-fo
 .ny-nav { display: flex; gap: 32px; }
 .ny-nav a { text-decoration: none; color: var(--ny-muted); font-size: 15px; font-weight: 500; padding: 12px 0; }
 .ny-nav a:hover { color: #FFFFFF; }
+.ny-nav a[aria-current="page"] { color: #FFFFFF; box-shadow: inset 0 -2px 0 var(--ny-green); }
 .ny-header .ny-btn { min-height: 44px; padding: 0 18px; font-size: 15px; border-radius: 6px; }
 .ny-prog { display: block; height: 2px; background: var(--ny-green); transform-origin: left; }
 

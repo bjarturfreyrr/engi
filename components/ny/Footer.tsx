@@ -1,9 +1,5 @@
-const links = [
-  { name: "Smíðin", href: "#smidin" },
-  { name: "Innifalið", href: "#innifalid" },
-  { name: "Verkin", href: "#verkin" },
-  { name: "Verð", href: "#verd" },
-]
+import Link from "next/link"
+import { pages } from "./nav"
 
 const Footer = () => {
   return (
@@ -19,8 +15,8 @@ const Footer = () => {
         </div>
         <div className="ny-footer__bottom">
           <nav aria-label="Fótur">
-            {links.map((link) => (
-              <a key={link.href} href={link.href}>{link.name}</a>
+            {pages.map((page) => (
+              <Link key={page.href} href={page.href} prefetch={false}>{page.name}</Link>
             ))}
           </nav>
           <span>© {new Date().getFullYear()} Móar</span>
