@@ -28,13 +28,6 @@ const Included = () => {
               <span className="ny-spec__t"><b>{item.title}</b><span>{item.desc}</span></span>
             </li>
           ))}
-          <li className="rv-l">
-            <Check size={22} strokeWidth={2.5} color="#3B82F6" aria-hidden="true" />
-            <span className="ny-spec__t">
-              <b>Bókanir <span className="ny-tag">Bókunarpakki</span></b>
-              <span>Tenging við bókunarkerfi eins og Noona, beint á vefnum.</span>
-            </span>
-          </li>
         </ul>
       </div>
     </section>

@@ -193,7 +193,6 @@ html:has(.ny) body { margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-fo
 .ny-spec__t { display: flex; flex-direction: column; gap: 6px; }
 .ny-spec__t b { font-size: clamp(22px, 2.2vw, 28px); letter-spacing: -0.02em; }
 .ny-spec__t span { color: var(--ny-muted); font-size: 16px; line-height: 1.55; }
-.ny-tag { font-size: 13px; font-weight: 500; color: var(--ny-bg); background: var(--ny-blue-light); padding: 3px 10px; border-radius: 999px; vertical-align: middle; letter-spacing: 0; }
 
 /* ---------- Verkin (lárétt skrun) ---------- */
 .ny-work { position: relative; border-top: 1px solid var(--ny-line-soft); }
@@ -228,7 +227,13 @@ html:has(.ny) body { margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-fo
 .ny-price__head > div { display: flex; flex-direction: column; gap: 20px; }
 .ny-price .ny-eyebrow { color: var(--ny-green-dark); }
 .ny-price__head p:last-child { margin: 0; max-width: 360px; font-size: 17px; line-height: 1.6; color: #2B4A61; }
-.ny-plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.ny-plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.ny-terms { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; border-top: 1px solid #C9D5DD; }
+.ny-terms li { display: flex; gap: 20px; padding: 26px 0; border-bottom: 1px solid #C9D5DD; }
+.ny-terms__n { font-size: 15px; font-weight: 500; color: var(--ny-green-dark); }
+.ny-terms__t { display: flex; flex-direction: column; gap: 6px; }
+.ny-terms__t b { font-size: clamp(22px, 2.2vw, 28px); letter-spacing: -0.02em; }
+.ny-terms__t span { font-size: 16px; line-height: 1.55; color: #2B4A61; }
 .ny-plan { border: 1px solid #C9D5DD; border-radius: 14px; background: #FFFFFF; overflow: hidden; display: flex; flex-direction: column; }
 .ny-plan__bar { display: flex; justify-content: space-between; padding: 14px 22px; border-bottom: 1px solid #DCE4EA; font-size: 13px; font-weight: 500; color: #4A6578; }
 .ny-plan__body { padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 26px; flex: 1; }
