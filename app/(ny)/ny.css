@@ -1,5 +1,12 @@
 /* Nýja Móar-forsíðan (/ny). Allt er afmarkað undir .ny svo það rekist ekki á gömlu síðuna. */
 
+/* Bakgrunnur html/body er ljós í globals.css; á nýju síðunni á hann að vera dökkur
+   og síðan á ekki að „skoppa“ þegar skrunað er upp fyrir efstu brún */
+html:has(.ny), html:has(.ny) body {
+  background: #0C2233;
+  overscroll-behavior-y: none;
+}
+
 .ny {
   --ny-bg: #0C2233;
   --ny-panel: #11304A;
