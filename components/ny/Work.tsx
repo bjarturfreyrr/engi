@@ -10,19 +10,17 @@ type Project = {
   url?: string
   image: string
   meta: string
-  // Breiðar skjámyndir: festa vinstri brún svo textinn klippist ekki
-  objectPosition?: string
 }
 
 const projects: Project[] = [
-  { title: "Aurlind", domain: "aurlind.is", url: "https://aurlind.is", image: "/verk/aurlind-2026.jpg", meta: "Fasteignafjárfestingar · Hönnun, viðhald, hýsing", objectPosition: "left top" },
+  { title: "Aurlind", domain: "aurlind.is", url: "https://aurlind.is", image: "/verk/aurlind-2026.jpg", meta: "Fasteignafjárfestingar · Hönnun, viðhald, hýsing" },
   { title: "Chad Grooming", domain: "chadgrooming.is", url: "https://chadgrooming.is", image: "/verk/chadgrooming2.jpg", meta: "Netverslun · Hönnun, viðhald, hýsing" },
   { title: "Thor Travel", domain: "thortravel.is", url: "https://thortravel.is", image: "/verk/thor.jpg", meta: "Ferðaþjónusta · Viðhald, hýsing" },
-  { title: "Týr", domain: "Týr · F.U.S. í Kópavogi", image: "/verk/tyr.jpg", meta: "Félagasamtök · Hönnun, viðhald, hýsing", objectPosition: "left top" },
-  { title: "K R Law", domain: "iplaw.is", url: "https://iplaw.is", image: "/verk/krlaw.jpg", meta: "Lögfræðistofa · Hönnun, viðhald, hýsing" },
+  { title: "Týr", domain: "Týr · F.U.S. í Kópavogi", image: "/verk/tyr.jpg", meta: "Félagasamtök · Hönnun, viðhald, hýsing" },
   { title: "Stallion", domain: "stallion.is", url: "https://www.stallion.is", image: "/verk/stallion.jpg", meta: "Heildsala og vörumerki · Hönnun, viðhald, hýsing" },
-  { title: "Hleðslu GO", domain: "Hleðslu GO", image: "/verk/hledslugo.jpg", meta: "Hleðslustöðvar · Hönnun, viðhald, hýsing", objectPosition: "left top" },
+  { title: "Hleðslu GO", domain: "Hleðslu GO", image: "/verk/hledslugo.jpg", meta: "Hleðslustöðvar · Hönnun, viðhald, hýsing" },
   { title: "Markaðsráð HR", domain: "Markaðsráð HR", image: "/verk/markadsrad.jpg", meta: "Nemendafélag · Hönnun, viðhald, hýsing" },
+  { title: "K R Law", domain: "iplaw.is", url: "https://iplaw.is", image: "/verk/krlaw.jpg", meta: "Lögfræðistofa · Hönnun, viðhald, hýsing" },
 ]
 
 // .htrack er position: relative, svo offsetLeft spjaldanna miðast við brautina
@@ -98,7 +96,6 @@ const Work = () => {
                       alt={`Vefsíða ${project.title}`}
                       fill
                       sizes="(max-width: 860px) 78vw, 760px"
-                      style={project.objectPosition ? { objectPosition: project.objectPosition } : undefined}
                     />
                   </div>
                 </div>
