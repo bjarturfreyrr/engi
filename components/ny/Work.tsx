@@ -16,9 +16,9 @@ type Project = {
 
 const projects: Project[] = [
   { title: "Aurlind", domain: "aurlind.is", url: "https://aurlind.is", image: "/aurlind-2026.jpg", meta: "Fasteignafjárfestingar · Hönnun, viðhald, hýsing", objectPosition: "left top" },
-  { title: "Týr", domain: "Týr · F.U.S. í Kópavogi", image: "/tyr.jpg", meta: "Félagasamtök · Hönnun, viðhald, hýsing", objectPosition: "left top" },
   { title: "Chad Grooming", domain: "chadgrooming.is", url: "https://chadgrooming.is", image: "/chadgrooming2.png", meta: "Netverslun · Hönnun, viðhald, hýsing" },
   { title: "Thor Travel", domain: "thortravel.is", url: "https://thortravel.is", image: "/thor.png", meta: "Ferðaþjónusta · Viðhald, hýsing" },
+  { title: "Týr", domain: "Týr · F.U.S. í Kópavogi", image: "/tyr.jpg", meta: "Félagasamtök · Hönnun, viðhald, hýsing", objectPosition: "left top" },
   { title: "K R Law", domain: "iplaw.is", url: "https://iplaw.is", image: "/krlaw.png", meta: "Lögfræðistofa · Hönnun, viðhald, hýsing" },
 ]
 
