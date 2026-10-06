@@ -20,6 +20,9 @@ const projects: Project[] = [
   { title: "Thor Travel", domain: "thortravel.is", url: "https://thortravel.is", image: "/verk/thor.jpg", meta: "Ferðaþjónusta · Viðhald, hýsing" },
   { title: "Týr", domain: "Týr · F.U.S. í Kópavogi", image: "/verk/tyr.jpg", meta: "Félagasamtök · Hönnun, viðhald, hýsing", objectPosition: "left top" },
   { title: "K R Law", domain: "iplaw.is", url: "https://iplaw.is", image: "/verk/krlaw.jpg", meta: "Lögfræðistofa · Hönnun, viðhald, hýsing" },
+  { title: "Stallion", domain: "stallion.is", url: "https://www.stallion.is", image: "/verk/stallion.jpg", meta: "Heildsala og vörumerki · Hönnun, viðhald, hýsing" },
+  { title: "Hleðslu GO", domain: "Hleðslu GO", image: "/verk/hledslugo.jpg", meta: "Hleðslustöðvar · Hönnun, viðhald, hýsing", objectPosition: "left top" },
+  { title: "Markaðsráð HR", domain: "Markaðsráð HR", image: "/verk/markadsrad.jpg", meta: "Nemendafélag · Hönnun, viðhald, hýsing" },
 ]
 
 // .htrack er position: relative, svo offsetLeft spjaldanna miðast við brautina
@@ -71,7 +74,7 @@ const Work = () => {
             <h2 className="ny-h2 rv s2">Vefir í rekstri hjá okkur.</h2>
           </div>
           <div className="ny-work__nav">
-            <span className="ny-work__count" aria-hidden="true">{index + 1}/{projects.length}</span>
+            <span className="ny-work__count" aria-hidden="true">{atEnd ? projects.length : index + 1}/{projects.length}</span>
             <button type="button" className="ny-arrow" onClick={() => go(-1)} disabled={index === 0} aria-label="Fyrra verk">
               <ArrowLeft size={20} aria-hidden="true" />
             </button>
