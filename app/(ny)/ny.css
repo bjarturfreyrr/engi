@@ -178,12 +178,19 @@
 
 /* ---------- Verkin (lárétt skrun) ---------- */
 .ny-work { position: relative; border-top: 1px solid var(--ny-line-soft); }
-.ny-work__pin { padding: clamp(56px, 6vw, 88px) 0; box-sizing: border-box; overflow-x: auto; }
+.ny-work__pin { padding: clamp(56px, 6vw, 88px) 0; box-sizing: border-box; }
 .ny-work__head { max-width: 1360px; margin: 0 auto clamp(32px, 4vw, 56px); padding: 0 var(--ny-gutter); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px; box-sizing: border-box; }
 .ny-work__head > div:first-child { display: flex; flex-direction: column; gap: 20px; }
-.ny-work__hint { display: flex; align-items: center; gap: 14px; font-size: 13px; color: var(--ny-subtle); width: 240px; }
-.ny-work__hint .ny-track { flex: 1; height: 2px; }
-.htrack { display: flex; gap: 32px; padding: 0 var(--ny-gutter); width: max-content; }
+.ny-work__nav { display: flex; align-items: center; gap: 12px; }
+.ny-work__count { font-size: 14px; font-weight: 500; color: var(--ny-subtle); min-width: 48px; text-align: right; font-variant-numeric: tabular-nums; }
+.ny-arrow { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--ny-line); background: var(--ny-panel); color: var(--ny-text); cursor: pointer; transition: background .2s ease, border-color .2s ease, opacity .2s ease; }
+.ny-arrow:hover:not(:disabled) { background: var(--ny-green); border-color: var(--ny-green); color: var(--ny-bg); }
+.ny-arrow:disabled { opacity: .35; cursor: default; }
+/* Hringekja: notandinn flettir sjálfur (strjúka, skruna til hliðar eða örvar) */
+.htrack { position: relative; display: flex; gap: 32px; padding: 0 var(--ny-gutter) 8px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--ny-gutter); scroll-behavior: smooth; overscroll-behavior-x: contain; scrollbar-width: none; }
+.htrack::-webkit-scrollbar { display: none; }
+.htrack:focus-visible { outline-offset: -2px; }
+.htrack .ny-case { scroll-snap-align: start; }
 .ny-case { width: min(78vw, 760px); flex: none; display: flex; flex-direction: column; gap: 18px; text-decoration: none; }
 .ny-case__frame { border: 1px solid var(--ny-line); border-radius: 12px; overflow: hidden; background: var(--ny-panel); }
 .ny-case__bar { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-bottom: 1px solid var(--ny-line); font-size: 12px; color: var(--ny-subtle); }
@@ -292,7 +299,6 @@
 @keyframes ny-popIn { from { opacity: 0; transform: scale(.9); } to { opacity: 1; transform: none; } }
 @keyframes ny-paint { from { background-color: #13293A; } to { background-color: #2563EB; } }
 @keyframes ny-paintG { from { background-color: #13293A; } to { background-color: #34D399; } }
-@keyframes ny-hmove { from { transform: none; } to { transform: translateX(calc(-100% + 100vw - 64px)); } }
 @keyframes ny-clipUp { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
 @keyframes ny-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @keyframes ny-dashOff { from { border-color: #2B4A61; } to { border-color: transparent; } }
@@ -354,11 +360,6 @@
   .ny .chip.c4 { animation-range: contain 86% contain 90%; }
   .ny .bprog { transform-origin: left; animation: ny-progress linear both; animation-timeline: --build; animation-range: contain 0% contain 90%; }
 
-  /* Verkin: kaflinn situr fastur og verkin renna lárétt */
-  .ny .ny-work { height: 3600px; view-timeline-name: --hs; }
-  .ny .ny-work__pin { position: sticky; top: 64px; overflow: hidden; }
-  .ny .htrack { animation: ny-hmove linear both; animation-timeline: --hs; animation-range: contain 5% contain 95%; }
-  .ny .hbar { transform-origin: left; animation: ny-progress linear both; animation-timeline: --hs; animation-range: contain 5% contain 95%; }
 
   .ny .tl { animation: ny-growY linear both; animation-timeline: view(); animation-range: entry 40% cover 70%; }
 }
