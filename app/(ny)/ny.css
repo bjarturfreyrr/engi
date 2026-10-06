@@ -355,7 +355,7 @@
   .ny .bprog { transform-origin: left; animation: ny-progress linear both; animation-timeline: --build; animation-range: contain 0% contain 90%; }
 
   /* Verkin: kaflinn situr fastur og verkin renna lárétt */
-  .ny .ny-work { height: 2600px; view-timeline-name: --hs; }
+  .ny .ny-work { height: 3600px; view-timeline-name: --hs; }
   .ny .ny-work__pin { position: sticky; top: 64px; overflow: hidden; }
   .ny .htrack { animation: ny-hmove linear both; animation-timeline: --hs; animation-range: contain 5% contain 95%; }
   .ny .hbar { transform-origin: left; animation: ny-progress linear both; animation-timeline: --hs; animation-range: contain 5% contain 95%; }
