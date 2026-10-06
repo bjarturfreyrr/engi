@@ -2,7 +2,7 @@ import { Space_Grotesk } from "next/font/google"
 import "./ny.css"
 
 const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--font-ny",
 })

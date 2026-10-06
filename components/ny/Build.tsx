@@ -101,7 +101,6 @@ const Build = () => {
                 Vefurinn er kominn í loftið
               </div>
             </div>
-            <div className="stamp">Í LOFTINU</div>
           </div>
 
           <div className="ny-chips">

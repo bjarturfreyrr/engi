@@ -7,6 +7,19 @@ html:has(.ny), html:has(.ny) body {
   overscroll-behavior-y: none;
 }
 
+/* Grunnstilling (síðan hleður ekki Tailwind preflight) */
+html:has(.ny) body { margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+/* :where() heldur sérhæfni í núlli svo þessar reglur yfirskrifi aldrei klasa síðunnar */
+:where(.ny) *, :where(.ny) *::before, :where(.ny) *::after { box-sizing: border-box; }
+.ny { line-height: 1.5; -webkit-text-size-adjust: 100%; }
+:where(.ny) :where(h1, h2, h3, p, ol, ul) { margin: 0; }
+:where(.ny) a { text-decoration: none; }
+:where(.ny) :where(img, svg) { display: block; }
+:where(.ny) :where(button, input, textarea) { font: inherit; color: inherit; }
+:where(.ny) b { font-weight: 700; }
+@keyframes ny-spin { to { transform: rotate(360deg); } }
+.ny-spin { animation: ny-spin 1s linear infinite; }
+
 .ny {
   --ny-bg: #0C2233;
   --ny-panel: #11304A;
@@ -161,7 +174,6 @@ html:has(.ny), html:has(.ny) body {
 .cms-save { align-self: flex-end; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 6px; background: var(--ny-green); font-size: 12px; font-weight: 700; }
 .toast { position: absolute; left: 50%; top: 16px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: var(--ny-bg); border: 1px solid var(--ny-green); color: #FFFFFF; font-size: 14px; font-weight: 500; white-space: nowrap; box-shadow: 0 16px 32px -10px rgba(0,0,0,.6); }
 .toast__ico { display: inline-flex; width: 20px; height: 20px; border-radius: 50%; background: var(--ny-green); align-items: center; justify-content: center; }
-.stamp { position: absolute; right: -16px; bottom: 32px; padding: 10px 16px; border: 3px solid var(--ny-green); border-radius: 10px; color: var(--ny-green); background: var(--ny-bg); font-weight: 700; font-size: 18px; letter-spacing: .04em; transform: rotate(-8deg); }
 .ny-chips { display: flex; flex-wrap: wrap; gap: 10px; }
 .ny-chip { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: var(--ny-panel); border: 1px solid var(--ny-line); font-size: 15px; }
 .ny-chip .ny-live-dot { width: 8px; height: 8px; }
@@ -315,7 +327,6 @@ html:has(.ny), html:has(.ny) body {
 @keyframes ny-liftUp { from { transform: none; } to { transform: translateY(-10px) scale(1.015); } }
 @keyframes ny-toastIn { from { opacity: 0; transform: translate(-50%, -30px); } to { opacity: 1; transform: translate(-50%, 0); } }
 @keyframes ny-chipIn { from { opacity: 0; transform: translateY(24px) scale(.8); } to { opacity: 1; transform: none; } }
-@keyframes ny-stamp { 0% { opacity: 0; transform: scale(2.2) rotate(-14deg); } 60% { opacity: 1; transform: scale(.92) rotate(-8deg); } 100% { opacity: 1; transform: scale(1) rotate(-8deg); } }
 
 @supports (animation-timeline: view()) {
   .ny .ny-prog { animation: ny-progress linear both; animation-timeline: scroll(root); }
@@ -360,7 +371,6 @@ html:has(.ny), html:has(.ny) body {
   .ny .ny-browser { animation: ny-glow linear both, ny-liftUp linear both; animation-timeline: --build, --build; animation-range: contain 68% contain 76%, contain 68% contain 76%; }
   .ny .ny-browser__live { animation: ny-popIn linear both; animation-timeline: --build; animation-range: contain 70% contain 74%; }
   .ny .toast { animation: ny-toastIn linear both; animation-timeline: --build; animation-range: contain 74% contain 79%; }
-  .ny .stamp { animation: ny-stamp linear both; animation-timeline: --build; animation-range: contain 78% contain 84%; }
   .ny .chip { animation: ny-chipIn linear both; animation-timeline: --build; animation-range: contain 80% contain 84%; }
   .ny .chip.c2 { animation-range: contain 82% contain 86%; }
   .ny .chip.c3 { animation-range: contain 84% contain 88%; }
@@ -384,5 +394,4 @@ html:has(.ny), html:has(.ny) body {
   .ny .ny-steps li { padding: 8px 0; }
   .ny .ny-steps__t span { display: none; }
   .ny .ny-chips { display: none; }
-  .ny .stamp { font-size: 14px; padding: 6px 10px; right: -6px; }
 }

@@ -73,7 +73,7 @@ const Contact = () => {
             </label>
             <button className="ny-btn ny-btn--green full" type="submit" disabled={isLoading}>
               {isLoading ? (
-                <>Sendi <Loader2 className="animate-spin" size={18} aria-hidden="true" /></>
+                <>Sendi <Loader2 className="ny-spin" size={18} aria-hidden="true" /></>
               ) : (
                 <>Senda fyrirspurn <ArrowRight className="arr" size={18} aria-hidden="true" /></>
               )}
