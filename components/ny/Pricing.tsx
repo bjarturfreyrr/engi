@@ -1,7 +1,7 @@
 import { ArrowRight, Check } from "lucide-react"
 
 const features = [
-  "Allt að 5 undirsíður",
+  "Allt að 6 undirsíður",
   "Vefumsjón og sambandsform",
   "Hýsing, SSL og lén",
   "Viðhald og uppfærslur",
