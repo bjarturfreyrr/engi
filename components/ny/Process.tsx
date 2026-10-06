@@ -2,7 +2,7 @@ const steps = [
   { k: "Skref 01", title: "Spjall", desc: "Við förum yfir reksturinn þinn og hvað vefurinn þarf að gera." },
   { k: "Skref 02", title: "Hönnun", desc: "Við aðlögum vefinn að merkinu þínu, litum og efni." },
   { k: "Skref 03", title: "Í loftið", desc: "Vefurinn fer á lénið þitt og fyrsta mánaðargjaldið er innheimt." },
-  { k: "Og svo", title: "Við sjáum um restina", desc: "Hýsing, uppfærslur og smábreytingar. Þú sendir okkur bara línu." },
+  { k: "Og svo", title: "Við sjáum um restina", desc: "Hýsing, uppfærslur og öryggi. Þú einbeitir þér að rekstrinum." },
 ]
 
 const Process = () => {

@@ -5,7 +5,6 @@ const features = [
   "Vefumsjón og sambandsform",
   "Hýsing, SSL og lén",
   "Viðhald og uppfærslur",
-  "30 mín. af breytingum á mánuði",
 ]
 
 const terms = [

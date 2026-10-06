@@ -5,7 +5,6 @@ const items = [
   { title: "Vefumsjónarkerfi", desc: "Þú breytir texta og myndum sjálf/ur, hvenær sem er." },
   { title: "Hýsing, SSL og lén", desc: "Hraður og öruggur vefur á þínu eigin léni." },
   { title: "Viðhald og uppfærslur", desc: "Tæknilegt viðhald og öryggisuppfærslur. Við vöktum, þú sefur." },
-  { title: "30 mín. af breytingum", desc: "Á hverjum mánuði gerum við breytingar fyrir þig." },
 ]
 
 const Included = () => {
