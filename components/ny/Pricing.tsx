@@ -19,7 +19,7 @@ const plans = [
   {
     name: "Basic",
     n: "Vinsælast",
-    lead: "Allt sem lítið fyrirtæki þarf.",
+    lead: "Fullbúinn vefur með undirsíðum.",
     price: "16.990",
     features: [
       "Allt að 6 undirsíður",
