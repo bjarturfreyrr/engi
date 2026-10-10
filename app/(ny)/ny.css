@@ -277,9 +277,10 @@ html:has(.ny) body { margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-fo
 .ny-form { flex: 1.7 1 440px; min-width: 0; border: 1px solid var(--ny-line); border-radius: 20px; background: var(--ny-panel); padding: clamp(20px, 2.8vw, 36px); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px 28px; font-size: 15px; box-sizing: border-box; }
 .ny-form label { display: flex; flex-direction: column; gap: 8px; color: var(--ny-muted); font-weight: 500; }
 .ny-form .full { grid-column: 1 / -1; }
-.ny-form input, .ny-form textarea { font: inherit; min-height: 46px; padding: 0 12px; border: 1px solid var(--ny-line); border-radius: 10px; background: var(--ny-bg); color: #FFFFFF; font-size: 16px; box-sizing: border-box; }
+.ny-form input, .ny-form textarea, .ny-form select { font: inherit; min-height: 46px; padding: 0 12px; border: 1px solid var(--ny-line); border-radius: 10px; background: var(--ny-bg); color: #FFFFFF; font-size: 16px; box-sizing: border-box; }
 .ny-form textarea { padding: 12px; resize: vertical; }
-.ny-form input:focus, .ny-form textarea:focus { border-color: var(--ny-green); outline: none; }
+.ny-form select { appearance: none; -webkit-appearance: none; padding-right: 40px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238FA6B5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; cursor: pointer; }
+.ny-form input:focus, .ny-form textarea:focus, .ny-form select:focus { border-color: var(--ny-green); outline: none; }
 .ny-form .ny-btn { justify-self: start; }
 .ny-form .ny-btn:disabled { opacity: .6; cursor: progress; }
 .ny-form__status { grid-column: 1 / -1; margin: 0; font-size: 16px; }

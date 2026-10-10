@@ -1,12 +1,33 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ArrowRight, Loader2 } from "lucide-react"
 
+const plans = [
+  { value: "Start", label: "Start – 9.990 kr./mán." },
+  { value: "Basic", label: "Basic – 16.990 kr./mán." },
+  { value: "Bókun", label: "Bókun – 29.990 kr./mán." },
+]
+
 const Contact = () => {
+  const [plan, setPlan] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
+
+  // Hnapparnir í verðhlutanum (data-pakki) og ?pakki= í slóð velja þjónustuleið í forminu
+  useEffect(() => {
+    const isPlan = (v: string | null): v is string => !!v && plans.some((p) => p.value === v)
+    const fromUrl = new URLSearchParams(window.location.search).get("pakki")
+    if (isPlan(fromUrl)) setPlan(fromUrl)
+    const onClick = (e: MouseEvent) => {
+      const link = (e.target as Element | null)?.closest?.("[data-pakki]")
+      const value = link?.getAttribute("data-pakki") ?? null
+      if (isPlan(value)) setPlan(value)
+    }
+    document.addEventListener("click", onClick)
+    return () => document.removeEventListener("click", onClick)
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -29,7 +50,8 @@ const Contact = () => {
         body: JSON.stringify({
           name,
           email: String(data.get("netfang") ?? ""),
-          subject: company ? `Fyrirspurn frá ${company}` : undefined,
+          subject: company ? `Fyrirspurn frá ${company}${plan ? ` – ${plan}` : ""}` : undefined,
+          plan: plan || undefined,
           message: [String(data.get("skilabod") ?? ""), extra].filter(Boolean).join("\n\n"),
         }),
       })
@@ -39,6 +61,7 @@ const Contact = () => {
       }
       setSuccess(true)
       form.reset()
+      setPlan("")
     } catch (err) {
       setError(err instanceof Error ? err.message : "Eitthvað fór úrskeiðis.")
     } finally {
@@ -67,6 +90,14 @@ const Contact = () => {
             </label>
             <label>Sími
               <input type="tel" name="simi" placeholder="000 0000" autoComplete="tel" />
+            </label>
+            <label className="full">Þjónustuleið
+              <select name="pakki" value={plan} onChange={(e) => setPlan(e.target.value)}>
+                <option value="">Veit ekki enn</option>
+                {plans.map((p) => (
+                  <option key={p.value} value={p.value}>{p.label}</option>
+                ))}
+              </select>
             </label>
             <label className="full">Hvað vantar þig?
               <textarea name="skilabod" rows={3} required />

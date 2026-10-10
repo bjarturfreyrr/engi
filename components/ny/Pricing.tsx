@@ -83,7 +83,7 @@ const Pricing = () => {
                     </li>
                   ))}
                 </ul>
-                <a className={`ny-btn ${plan.dark ? "ny-btn--green" : "ny-btn--dark-outline"}`} href="#samband">
+                <a className={`ny-btn ${plan.dark ? "ny-btn--green" : "ny-btn--dark-outline"}`} href="#samband" data-pakki={plan.name}>
                   {plan.cta} <ArrowRight className="arr" size={18} aria-hidden="true" />
                 </a>
               </div>

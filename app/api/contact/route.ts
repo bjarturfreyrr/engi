@@ -8,6 +8,7 @@ const contactSchema = z.object({
   name: z.string().min(1, "Nafn er nauðsynlegt.").max(200, "Nafn er of langt."),
   email: z.string().email("Ógilt netfang.").max(254, "Netfang er of langt."),
   subject: z.string().max(200, "Efni er of langt.").optional(),
+  plan: z.string().max(50, "Þjónustuleið er of löng.").optional(),
   message: z.string().min(1, "Skilaboð eru nauðsynleg.").max(5000, "Skilaboð eru of löng."),
 })
 
@@ -31,11 +32,12 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: message }, { status: 400 })
     }
 
-    const { name, email, subject, message } = result.data
+    const { name, email, subject, plan, message } = result.data
 
     const safeName = escapeHtml(name)
     const safeEmail = escapeHtml(email)
     const safeSubject = escapeHtml(subject || "Ekki tilgreint")
+    const safePlan = escapeHtml(plan || "Ekki valin")
     const safeMessage = escapeHtml(message).replace(/\n/g, "<br>")
 
     const html = `
@@ -79,6 +81,12 @@ export async function POST(request: Request) {
                 </tr>
                 <tr>
                   <td style="padding: 16px 0; border-bottom: 1px solid #e5e7eb;">
+                    <span style="color: #6b7280; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Þjónustuleið</span>
+                    <p style="margin: 6px 0 0 0; color: #111827; font-size: 16px; font-weight: 600;">${safePlan}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 16px 0; border-bottom: 1px solid #e5e7eb;">
                     <span style="color: #6b7280; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Efni</span>
                     <p style="margin: 6px 0 0 0; color: #111827; font-size: 16px;">${safeSubject}</p>
                   </td>
@@ -117,7 +125,7 @@ export async function POST(request: Request) {
       from: 'Móar <moar@xn--mar-gna.is>',
       to: ['moar@xn--mar-gna.is'],
       replyTo: email,
-      subject: subject || `Ný fyrirspurn frá ${name}`,
+      subject: subject || `Ný fyrirspurn frá ${name}${plan ? ` – ${plan}` : ""}`,
       html,
     })
 
