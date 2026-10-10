@@ -1,7 +1,7 @@
 import { Check } from "lucide-react"
 
 const items = [
-  { title: "Vefhönnun", desc: "Allt að 6 undirsíður, lagaðar að merkinu þínu. Virkar jafnvel í síma og tölvu." },
+  { title: "Vefhönnun", desc: "Ein síða eða allt að 10 undirsíður eftir leið, lagaðar að merkinu þínu. Virkar jafnvel í síma og tölvu." },
   { title: "Vefumsjónarkerfi", desc: "Þú breytir texta og myndum sjálf/ur, hvenær sem er." },
   { title: "Hýsing, SSL og lén", desc: "Hraður og öruggur vefur á þínu eigin léni." },
   { title: "Viðhald og uppfærslur", desc: "Tæknilegt viðhald og öryggisuppfærslur. Við vöktum, þú sefur." },
@@ -27,6 +27,13 @@ const Included = () => {
               <span className="ny-spec__t"><b>{item.title}</b><span>{item.desc}</span></span>
             </li>
           ))}
+          <li className="rv-l">
+            <Check size={22} strokeWidth={2.5} color="#3B82F6" aria-hidden="true" />
+            <span className="ny-spec__t">
+              <b>Bókanir <span className="ny-tag">Bókun</span></b>
+              <span>Bókunarkerfi á vefnum, með áminningum í tölvupósti til viðskiptavina þinna.</span>
+            </span>
+          </li>
         </ul>
       </div>
     </section>

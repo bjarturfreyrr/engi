@@ -15,6 +15,7 @@ const features = [
   { label: "Ekkert stofngjald", variant: "ny-pill--green" },
   { label: "Vefumsjón" },
   { label: "SSL" },
+  { label: "Bókanir" },
   { label: "Fast mánaðargjald", variant: "ny-pill--blue" },
   { label: "Viðhald" },
   { label: "Öryggisuppfærslur" },
