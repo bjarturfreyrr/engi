@@ -4,10 +4,10 @@ const steps = [
   { n: "01", title: "Grind", desc: "Við skipuleggjum síðurnar út frá rekstrinum þínum." },
   { n: "02", title: "Hönnun", desc: "Merkið þitt, litir og letur fara á sinn stað." },
   { n: "03", title: "Efni", desc: "Textar og myndir, sem þú getur svo breytt sjálf/ur." },
-  { n: "04", title: "Í loftið", desc: "Á lénið þitt, með SSL. Við tökum við rekstrinum." },
+  { n: "04", title: "Í loftið", desc: "Með SSL, hraður og öruggur. Við tökum við rekstrinum." },
 ]
 
-const chips = ["SSL virkt", "Virkar í síma", "Tengt léninu þínu", "Við vöktum vefinn"]
+const chips = ["SSL virkt", "Virkar í síma", "Hýsing innifalin", "Við vöktum vefinn"]
 
 const cards = [
   { ico: "paint-g", color: "#34D399", lines: ["txt", "txt t3"] },
