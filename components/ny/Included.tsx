@@ -3,7 +3,7 @@ import { Check } from "lucide-react"
 const items = [
   { title: "Vefhönnun", desc: "Ein síða eða allt að 10 undirsíður eftir leið, lagaðar að merkinu þínu. Virkar jafnvel í síma og tölvu." },
   { title: "Vefumsjónarkerfi", desc: "Þú breytir texta og myndum sjálf/ur, hvenær sem er." },
-  { title: "Hýsing, SSL og lén", desc: "Hraður og öruggur vefur á þínu eigin léni." },
+  { title: "Hýsing og SSL", desc: "Hraður og öruggur vefur, tengdur við lénið þitt." },
   { title: "Viðhald og uppfærslur", desc: "Tæknilegt viðhald og öryggisuppfærslur. Við vöktum, þú sefur." },
 ]
 

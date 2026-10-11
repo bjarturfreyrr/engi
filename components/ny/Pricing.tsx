@@ -9,7 +9,7 @@ const plans = [
     features: [
       "Ein löng síða með allt að 5 hlutum",
       "Vefumsjón og sambandsform",
-      "Hýsing, SSL og lén",
+      "Hýsing og SSL",
       "Viðhald og uppfærslur",
     ],
     cta: "Velja Start",
