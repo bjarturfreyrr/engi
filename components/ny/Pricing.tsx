@@ -11,7 +11,6 @@ const plans = [
       "Vefumsjón og sambandsform",
       "Hýsing, SSL og lén",
       "Viðhald og uppfærslur",
-      "1 efnisbreyting á mánuði (30 mín.)",
     ],
     cta: "Velja Start",
     dark: false,
@@ -24,7 +23,6 @@ const plans = [
     features: [
       "Allt að 6 undirsíður",
       "Allt sem er í Start",
-      "2 efnisbreytingar á mánuði (1 klst.)",
     ],
     cta: "Velja Basic",
     dark: true,
@@ -33,11 +31,10 @@ const plans = [
     name: "Bókun",
     n: "03",
     lead: "Fyrir stofur sem taka við bókunum.",
-    price: "29.990",
+    price: "24.990",
     features: [
       "Allt að 10 undirsíður",
       "Bókunarkerfi með áminningum í tölvupósti",
-      "4 efnisbreytingar á mánuði (2 klst.)",
       "Mánaðarleg samantekt um umferð og bókanir",
     ],
     cta: "Velja Bókun",

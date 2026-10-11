@@ -6,7 +6,7 @@ import { ArrowRight, Loader2 } from "lucide-react"
 const plans = [
   { value: "Start", label: "Start – 9.990 kr./mán." },
   { value: "Basic", label: "Basic – 16.990 kr./mán." },
-  { value: "Bókun", label: "Bókun – 29.990 kr./mán." },
+  { value: "Bókun", label: "Bókun – 24.990 kr./mán." },
 ]
 
 const Contact = () => {
